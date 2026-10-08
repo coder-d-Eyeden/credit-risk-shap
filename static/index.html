@@ -21,7 +21,7 @@
         <path d="M20 10 L20 30 M10 20 L30 20" />
       </svg>
       <div>
-        <h1>Credit Ledger</h1>
+        <h1>CredSA</h1>
         <p class="masthead__tag">An underwriting desk for consumer loan applications</p>
       </div>
     </div>
@@ -203,6 +203,49 @@
 
     </div>
   </section>
+
+  <section class="explanation" id="explanation" hidden aria-live="polite">
+  <div class="explanation__header">
+    <div>
+      <p class="section-kicker">MODEL EXPLANATION</p>
+      <h2>Why this assessment?</h2>
+    </div>
+    <p class="explanation__note">
+      Factors that most influenced the model's risk assessment.
+    </p>
+  </div>
+
+  <div class="explanation__columns">
+
+    <div class="factor-group factor-group--risk">
+      <h3>
+        <span class="factor-icon">↑</span>
+        Increases risk
+      </h3>
+
+      <div id="riskFactors" class="factor-list">
+        <!-- populated by JavaScript -->
+      </div>
+    </div>
+
+    <div class="factor-group factor-group--safe">
+      <h3>
+        <span class="factor-icon">↓</span>
+        Reduces risk
+      </h3>
+
+      <div id="protectiveFactors" class="factor-list">
+        <!-- populated by JavaScript -->
+      </div>
+    </div>
+
+  </div>
+
+  <p class="explanation__disclaimer">
+    SHAP values indicate how individual features influenced the underlying
+    model's risk score. They are not changes in probability points.
+  </p>
+</section>
 
   <footer class="foot">
     <p>Figures are model estimates, not a lending decision. Recorded for reference only.</p>

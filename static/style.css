@@ -480,6 +480,280 @@ button#submitBtn.loading .btn-label { opacity: 0.85; }
   text-align: right;
 }
 
+
+
+
+/* ============================================================
+   Model explanation / SHAP factors
+   ============================================================ */
+
+.explanation {
+  margin-top: 36px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+
+.explanation__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+
+.section-kicker {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--brass);
+}
+
+
+.explanation__header h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+
+.explanation__note {
+  max-width: 250px;
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+
+/* ------------------------------------------------------------
+   Two factor columns
+   ------------------------------------------------------------ */
+
+.explanation__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+
+.factor-group {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+
+.factor-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 0 0 20px;
+
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+
+.factor-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 23px;
+  height: 23px;
+
+  border: 1px solid currentColor;
+
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+
+.factor-group--risk h3 {
+  color: var(--risk-red);
+}
+
+
+.factor-group--safe h3 {
+  color: var(--risk-green);
+}
+
+
+.factor-group--risk h3,
+.factor-group--safe h3 {
+  color: var(--ink);
+}
+
+
+.factor-group--risk .factor-icon {
+  color: var(--risk-red);
+}
+
+
+.factor-group--safe .factor-icon {
+  color: var(--risk-green);
+}
+
+
+/* ------------------------------------------------------------
+   Factor list
+   ------------------------------------------------------------ */
+
+.factor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+
+.factor-item {
+  width: 100%;
+}
+
+
+.factor-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 7px;
+}
+
+
+.factor-name {
+  min-width: 0;
+
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+
+.factor-value {
+  flex-shrink: 0;
+
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+}
+
+
+/* ------------------------------------------------------------
+   SHAP importance bar
+   ------------------------------------------------------------ */
+
+.factor-bar {
+  width: 100%;
+  height: 4px;
+
+  overflow: hidden;
+
+  background: var(--line);
+}
+
+
+.factor-bar-fill {
+  height: 100%;
+  width: 0;
+
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.factor-group--risk .factor-bar-fill {
+  background: var(--risk-red);
+}
+
+
+.factor-group--safe .factor-bar-fill {
+  background: var(--risk-green);
+}
+
+
+/* ------------------------------------------------------------
+   Empty state
+   ------------------------------------------------------------ */
+
+.empty-factor {
+  margin: 0;
+
+  font-size: 11.5px;
+  line-height: 1.5;
+
+  color: var(--ink-faint);
+}
+
+
+/* ------------------------------------------------------------
+   Explanation disclaimer
+   ------------------------------------------------------------ */
+
+.explanation__disclaimer {
+  margin: 22px 0 0;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--line-soft);
+
+  font-size: 10.5px;
+  line-height: 1.5;
+
+  color: var(--ink-faint);
+}
+
+
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+
+@media (max-width: 520px) {
+
+  .explanation {
+    padding: 22px 18px;
+  }
+
+  .explanation__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .explanation__note {
+    max-width: none;
+    text-align: left;
+  }
+
+  .explanation__columns {
+    grid-template-columns: 1fr;
+  }
+
+  .factor-group {
+    padding: 17px;
+  }
+
+}
+
+
+
+
+
+
+
+
 /* ============================================================
    Footer
    ============================================================ */
